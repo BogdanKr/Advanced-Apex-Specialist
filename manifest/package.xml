@@ -4,5 +4,10 @@
         <members>Constants</members>
         <name>ApexClass</name>
     </types>
+    <types>
+        <members>Inventory_Level_Low</members>
+        <members>Select_One</members>
+        <name>CustomLabel</name>
+    </types>
     <version>56.0</version>
 </Package>
