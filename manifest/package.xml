@@ -23,5 +23,10 @@
         <members>product2Trigger</members>
         <name>ApexTrigger</name>
     </types>
+    <types>
+        <members>OrderEdit</members>
+        <members>Product2New</members>
+        <name>ApexPage</name>
+    </types>
     <version>56.0</version>
 </Package>

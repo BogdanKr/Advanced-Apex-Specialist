@@ -11,23 +11,23 @@ public with sharing class Constants {
     public static final String ACTIVATED_ORDER_STATUS = 'Activated';//A String used to evaluate if an Order is Activated or not.
     public static final String INVENTORY_ANNOUNCEMENTS = 'Inventory Announcements';//A String used to query a Chatter Group by Name.
     public static final String ERROR_MESSAGE = 'An error has occurred, please take a screenshot with the URL and send it to IT.';//A String used to display user friendly error messages on Visualforce pages.
-    public static final Id STANDARD_PRICEBOOK_ID = getStdPricebookId();//n Id used to create Orders and PricebookEntries in business and test code.
+    public static final Id STANDARD_PRICEBOOK_ID = getStdPricebookId();// Id used to create Orders and PricebookEntries in business and test code.
+//    public static final Id STANDARD_PRICEBOOK_ID = '01sDn000005q3xEIAQ';// Id used to create Orders and PricebookEntries in business and test code.
 
     public static Id getStdPricebookId() {
-        if (Test.isRunningTest())   return Test.getStandardPricebookId();
+        if (Test.isRunningTest()) {
+            return Test.getStandardPricebookId();
+        }
         return getStdPriceBook().Id;
     }
     private static Pricebook2 stdPriceBook;
     //  getStdPriceBook: Singleton
-    public static Pricebook2 getStdPriceBook () {
+    public static Pricebook2 getStdPriceBook() {
         if (stdPriceBook == null) {
             stdPriceBook = [SELECT Id, Name FROM Pricebook2 WHERE IsStandard = TRUE LIMIT 1];
         }
         return stdPriceBook;
     }
-
-
-
 
 
 }
