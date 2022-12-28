@@ -157,4 +157,8 @@ public class TestDataFactory {
         }
     }
 
+    public static void VerifyQuantityOrdered(Product2 originalProduct, Product2 updatedProduct, Integer qtyOrdered) {
+        System.assert(originalProduct.Quantity_Ordered__c + qtyOrdered  == updatedProduct.Quantity_Ordered__c);
+    }
+
 }
